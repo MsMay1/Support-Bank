@@ -20,9 +20,20 @@ namespace Support_Bank_Console_App
             string[] transactionElements = row.Split(",");
             Transaction singleTransaction = new Transaction(transactionElements);
             transactionList.Add(singleTransaction);
-            Console.WriteLine(singleTransaction.Date);
            }
+
+            List<string> names = new List<string>();
+
+           foreach(Transaction transaction in transactionList){
+               names.Add(transaction.From);
+           }
+
+           List<string> uniqueAccounts = names.Distinct().ToList();
            
+           foreach(string name in uniqueAccounts){
+            Account createAccount = new Account(name);
+            Console.WriteLine(createAccount.Name);
+           }
         }
     }
 }
