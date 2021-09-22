@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Training\\C#\\Support Bank\\Support Bank Console App\\Support Bank Console App.csproj",
-      "projectName": "Support Bank Console App",
-      "projectPath": "C:\\Training\\C#\\Support Bank\\Support Bank Console App\\Support Bank Console App.csproj",
+      "projectUniqueName": "C:\\Training\\C#\\SupportBank\\SupportBankConsoleApp\\SupportBankConsoleApp.csproj",
+      "projectName": "SupportBankConsoleApp",
+      "projectPath": "C:\\Training\\C#\\SupportBank\\SupportBankConsoleApp\\SupportBankConsoleApp.csproj",
       "packagesPath": "C:\\Users\\marmay\\.nuget\\packages\\",
-      "outputPath": "C:\\Training\\C#\\Support Bank\\Support Bank Console App\\obj\\",
+      "outputPath": "C:\\Training\\C#\\SupportBank\\SupportBankConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marmay\\AppData\\Roaming\\NuGet\\NuGet.Config"

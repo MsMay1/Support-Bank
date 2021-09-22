@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J91Qzd/y0tPqToZ9AsfWmfRWM7ioKdV4s4YHAomZvq7oPHkLkjYhwjh2DOVWEq29AkjWNf8ExfRggkJHz+r5zQ==",
+  "dgSpecHash": "N78GdVZ563ELC+KH2ldcYwHwiYZbVcIDwxyyNFnDKCSX3R36Bh3VWKcV3eKiFwLm4Cn+l1bdxyWpopiip62pfA==",
   "success": true,
-  "projectFilePath": "C:\\Training\\C#\\Support Bank\\Support Bank Console App\\Support Bank Console App.csproj",
+  "projectFilePath": "C:\\Training\\C#\\SupportBank\\SupportBankConsoleApp\\SupportBankConsoleApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

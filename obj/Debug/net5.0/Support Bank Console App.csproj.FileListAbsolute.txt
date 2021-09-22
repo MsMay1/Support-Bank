@@ -1,0 +1,16 @@
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\Support Bank Console App.csproj.AssemblyReference.cache
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\Support Bank Console App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\Support Bank Console App.AssemblyInfoInputs.cache
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\Support Bank Console App.AssemblyInfo.cs
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\Support Bank Console App.csproj.CoreCompileInputs.cache
+C:\Training\C#\Support Bank\Support Bank Console App\bin\Debug\net5.0\Support Bank Console App.exe
+C:\Training\C#\Support Bank\Support Bank Console App\bin\Debug\net5.0\Support Bank Console App.deps.json
+C:\Training\C#\Support Bank\Support Bank Console App\bin\Debug\net5.0\Support Bank Console App.runtimeconfig.json
+C:\Training\C#\Support Bank\Support Bank Console App\bin\Debug\net5.0\Support Bank Console App.runtimeconfig.dev.json
+C:\Training\C#\Support Bank\Support Bank Console App\bin\Debug\net5.0\Support Bank Console App.dll
+C:\Training\C#\Support Bank\Support Bank Console App\bin\Debug\net5.0\ref\Support Bank Console App.dll
+C:\Training\C#\Support Bank\Support Bank Console App\bin\Debug\net5.0\Support Bank Console App.pdb
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\Support Bank Console App.dll
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\ref\Support Bank Console App.dll
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\Support Bank Console App.pdb
+C:\Training\C#\Support Bank\Support Bank Console App\obj\Debug\net5.0\Support Bank Console App.genruntimeconfig.cache
