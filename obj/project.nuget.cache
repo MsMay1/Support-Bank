@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "N78GdVZ563ELC+KH2ldcYwHwiYZbVcIDwxyyNFnDKCSX3R36Bh3VWKcV3eKiFwLm4Cn+l1bdxyWpopiip62pfA==",
+  "dgSpecHash": "ZWXENYd/aU4IFBI0M1263YLB9HWAQ/JPilEHiT2N8lofIjdxnkVnrIYvbcvq6l+OXzOm0b1ZcczexQErTQxAYQ==",
   "success": true,
   "projectFilePath": "C:\\Training\\C#\\SupportBank\\SupportBankConsoleApp\\SupportBankConsoleApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\marmay\\.nuget\\packages\\nlog\\4.7.11\\nlog.4.7.11.nupkg.sha512"
+  ],
   "logs": []
 }

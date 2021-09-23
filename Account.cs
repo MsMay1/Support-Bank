@@ -10,6 +10,8 @@ namespace Support_Bank_Console_App
 
         public decimal AmountToPay { get; set; }
 
+        public decimal Balance { get; set; }
+
         public List<Transaction> IncomingTransactions { get; set; }
         public List<Transaction> OutgoingTransactions { get; set; }
 
