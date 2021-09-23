@@ -9,31 +9,71 @@ namespace Support_Bank_Console_App
     {
         static void Main(string[] args)
         {
-           string path = @"C:\Training\C#\SupportBank\support-bank-resources-master\Transactions2014.csv";
+            Reader fileReader = new Reader();
 
-           var transactionsRows = File.ReadAllLines(path).Skip(1);
+            List<Transaction> transactionList = fileReader.CreateTransactionList(@"C:\Training\C#\SupportBank\support-bank-resources-master\Transactions2014.csv");
 
-           List<Transaction> transactionList = new List<Transaction>();
-           
-           foreach (string row in transactionsRows)
-           {
-            string[] transactionElements = row.Split(",");
-            Transaction singleTransaction = new Transaction(transactionElements);
-            transactionList.Add(singleTransaction);
-           }
+           List<string> accountNames = CreateNameList(transactionList);
+
+           List<Account> AccountList = CreateAccounts(accountNames, transactionList);
+
+            // Console.WriteLine("Please enter the number for your command\n 1: List All \n 2: List by Account");
+            // int Command = int.Parse(Console.ReadLine());
+            // if (Command == 1)
+            // {
+
+            // }
+            // if (Command == 2)
+            // {
+
+            // }
+
+
+        }
+        public static List<string> CreateNameList(List<Transaction> transactionList)
+        {
 
             List<string> names = new List<string>();
 
-           foreach(Transaction transaction in transactionList){
-               names.Add(transaction.From);
-           }
+            foreach (Transaction transaction in transactionList)
+            {
+                names.Add(transaction.From);
+                names.Add(transaction.To);
+            }
 
-           List<string> uniqueAccounts = names.Distinct().ToList();
-           
-           foreach(string name in uniqueAccounts){
-            Account createAccount = new Account(name);
-            Console.WriteLine(createAccount.Name);
-           }
+            List<string> accountNames = names.Distinct().ToList();
+
+            return accountNames;
+        }
+
+        public static List<Account> CreateAccounts(List<string> accountNames, List<Transaction> transactionList)
+        {
+            List<Account> AccountLists = new List<Account>();
+             foreach (string name in accountNames)
+            {
+                Account createAccount = new Account(name);
+                foreach (Transaction transaction in transactionList)
+                {
+                    if (transaction.From == name)
+                    {
+                        createAccount.OutgoingTransactions.Add(transaction);
+                        createAccount.AmountToPay += transaction.Amount;
+                    }
+                    if (transaction.To == name)
+                    {
+                        createAccount.IncomingTransactions.Add(transaction);
+                        createAccount.AmountGained += transaction.Amount;
+                    }
+                }
+                AccountLists.Add(createAccount);
+                Console.WriteLine($"Name: {createAccount.Name} Amount To Pay: £{createAccount.AmountToPay} Amount Gained: £{createAccount.AmountGained}");
+            }
+            return AccountLists;
         }
     }
 }
+
+
+
+
+
