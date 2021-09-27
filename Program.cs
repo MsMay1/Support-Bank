@@ -1,17 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 namespace Support_Bank_Console_App
 {
     class Program
     {
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
+            var config = new LoggingConfiguration();
+            var target = new FileTarget { FileName = @"C:\Training\C#\SupportBank.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
+            config.AddTarget("File Logger", target);
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
+            LogManager.Configuration = config;
+
             // Get file path and create a list of all transactions
             Reader fileReader = new Reader();
 
-            List<Transaction> transactionList = fileReader.CreateTransactionList(@"C:\Training\C#\SupportBank\support-bank-resources-master\Transactions2014.csv");
+            List<Transaction> transactionList = fileReader.CreateTransactionList(@"C:\Training\C#\SupportBank\support-bank-resources-master\DodgyTransactions2015.csv");
+            //@"C:\Training\C#\SupportBank\support-bank-resources-master\Transactions2014.csv"
 
             //Create List of unique Names
             List<string> accountNames = CreateNameList(transactionList);
@@ -20,22 +31,7 @@ namespace Support_Bank_Console_App
             Dictionary<string, Account> AccountDictionary = CreateAccounts(accountNames, transactionList);
 
             //Calling the Program
-            Console.WriteLine("Please enter the number for your command\n 1: List All \n 2: List by Account");
-
-            int Command = int.Parse(Console.ReadLine());
-
-            if (Command == 1)
-            {
-                ListAll(AccountDictionary);
-            }
-
-            if (Command == 2)
-            {
-                Console.WriteLine("Enter Name Of Account");
-                string accountName = Console.ReadLine();
-                ListByAccount(accountName, AccountDictionary);
-            }
-
+            ValidateInput(AccountDictionary);
         }
 
         public static List<string> CreateNameList(List<Transaction> transactionList)
@@ -116,7 +112,39 @@ namespace Support_Bank_Console_App
             AccountDictionary[name].OutgoingTransactions.ForEach(transaction => Console.WriteLine($"Date: {(transaction.Date).ToShortDateString()} To: {transaction.To} Reason: {transaction.Narrative} Amount:{transaction.Amount:C}"));
 
         }
+        public static void ValidateInput(Dictionary<string, Account> AccountDictionary)
+        {
+            Console.WriteLine("Please enter the number for your command\n 1: List All \n 2: List by Account");
+            try
+            {
+                int Command = int.Parse(Console.ReadLine());
 
+                if (Command == 1)
+                {
+                    ListAll(AccountDictionary);
+                }
+
+                else if (Command == 2)
+                {
+                    Console.WriteLine("Enter Name Of Account");
+                    string accountName = Console.ReadLine();
+                    ListByAccount(accountName, AccountDictionary);
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect input. Please enter either option 1 or option 2");
+                    Logger.Error("Invalid input - incorrect number");
+                    ValidateInput(AccountDictionary);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Incorrect input. Please enter either option 1 or option 2");
+                Logger.Error("Invalid input - not a number" + e);
+                ValidateInput(AccountDictionary);
+            }
+
+        }
     }
 }
 
